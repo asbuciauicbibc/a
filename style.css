@@ -235,9 +235,6 @@ section {
   top: 1302px;
   font-size: 2em;
 }
-body {
-background: red;
-}
 
 .a {
   font-family: Crimson Pro;
@@ -248,7 +245,7 @@ background: red;
 	background: #ААА;
 	color: red;
 	align-items: center;
-	
+	background: red;
 }
 .container5 {
             font-family: Arial, sans-serif;
