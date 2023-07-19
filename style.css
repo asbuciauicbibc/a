@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+section {
+  display: flex;
+  background: #000;
+  min-height: 70vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  position: relative;
+}
+
+.content h2 {
+  color: #fff;
+  font-size: 8em;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.content h2:nth-child(1) {
+  color: transparent;
+  -webkit-text-stroke: 2px #0094b5;
+}
+
+.content h2:nth-child(2) {
+  color: #0094b5;
+  animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate {
+  0%,
+  100% {
+    clip-path: polygon(
+      0% 45%,
+      16% 44%,
+      33% 50%,
+      54% 60%,
+      70% 61%,
+      84% 59%,
+      100% 52%,
+      100% 100%,
+      0% 100%
+    );
+  }
+
+  50% {
+    clip-path: polygon(
+      0% 60%,
+      15% 65%,
+      34% 66%,
+      51% 62%,
+      67% 50%,
+      84% 45%,
+      100% 46%,
+      100% 100%,
+      0% 100%
+    );
+  }
+}
+@import url('https://fonts.googleapis.com/css?family=Lato:100&display=swap');
+
+.center {
+  position: absolute;
+  top: 620px;        			/* Место кнопки */     
+  right: 53.42%; 
+}
+
+.btn {
+  width: 480px;					/*размер кнопки*/
+  height: 270px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #91C9FF;
+  outline: none;
+  transition: 1s ease-in-out;
+}
+
+.border {
+  transform: scale(2.7,4.7); 
+  position: absolute; 
+  left: 0;               /*перемещение контура*/
+  top: 0;
+  fill: none;
+  stroke: #f00;                     /* контур */
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  transition: 1s ease-in-out;
+  top: 105px;        			/* Место кнопки */     
+
+   left: 31.35%; 
+}
+
+.btn:hover {
+  transition: 1s ease-in-out;
+  background: transparent;
+}
+
+.btn:hover svg {
+  stroke-dashoffset: -480;
+}
+
+.btn span {
+  color: red;
+  font-size: 18px;
+  font-weight: 100;
+}
+
+.фото1 {
+  display: flex;
+  position: absolute;
+  left: 15%;
+  top: 620px;
+}
+.текст1 {
+  font-family: Crimson Pro;
+  color: black;
+  position: absolute;
+  left: 25%;
+  top: 550px;
+  font-size: 2em;
+}
+
+.center2 {
+  position: absolute;
+  top: 1000px;        			/* Место кнопки */     
+  right: 13.45%; 
+}
+
+.btn2 {
+  width: 480px;					/*размер кнопки*/
+  height: 270px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #91C9FF;
+  outline: none;
+  transition: 1s ease-in-out;
+}
+
+.border2 {
+  transform: scale(2.7,4.7); 
+  position: absolute; 
+  left: 0;               /*перемещение контура*/
+  top: 0;
+  fill: none;
+  stroke: #f00;                     /* контур */
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  transition: 1s ease-in-out;
+  top: 105px;        			/* Место кнопки */     
+  left: 31.35%; 
+}
+
+.btn2:hover {
+  transition: 1s ease-in-out;
+  background: transparent;
+}
+
+.btn2:hover .border2 {
+  stroke-dashoffset: -480;
+}
+
+.фото3 {
+  display: flex;
+  position: absolute;
+  left: 15%;
+  top: 1372px;
+}
+.фото2 {
+  display: flex;
+  position: absolute;
+  left: 55%;
+  top: 1000px;
+}
+.center3 {
+  position: absolute;
+  top: 1372px;        			/* Место кнопки */     
+  right: 53.42%; 
+}
+
+.btn3 {
+  width: 480px;					/*размер кнопки*/
+  height: 270px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #91C9FF;
+  outline: none;
+  transition: 1s ease-in-out;
+}
+
+.border3 {
+  transform: scale(2.7,4.7); 
+  position: absolute; 
+  left: 0;               /*перемещение контура*/
+  top: 0;
+  fill: none;
+  stroke: #f00;                     /* контур */
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  transition: 1s ease-in-out;
+  top: 105px;        			/* Место кнопки */     
+  left: 31.35%; 
+}
+
+.btn3:hover {
+  transition: 1s ease-in-out;
+  background: transparent;
+}
+
+.btn3:hover .border3 {
+  stroke-dashoffset: -480;
+}
+
+.текст2 {
+  font-family: Crimson Pro;
+  color: black;
+  position: absolute;
+  left: 65.5%;
+  top: 930px;
+  font-size: 2em;
+}
+.текст3 {
+  font-family: Crimson Pro;
+  color: black;
+  position: absolute;
+  left: 26.5%;
+  top: 1302px;
+  font-size: 2em;
+}
+body {
+background: red;
+}
+
+.a {
+  font-family: Crimson Pro;
+  position: absolute;
+  left: 25%;
+  top: 1600px;
+  font-size: 2em;
+	background: #ААА;
+	color: red;
+	align-items: center;
+	
+}
+.container5 {
+            font-family: Arial, sans-serif;
+        }
+        
+        .container5 {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container5 h2 {
+            text-align: center;
+        }
+        
+        .container5 input[type="text"],
+        .container5 textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            outline: none;
+            border-radius: 5px;
+        }
+        
+        .container5 textarea {
+            height: 100px;
+            resize: none;
+            overflow-y: auto;
+        }
+        
+        .container5 button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .container5 button:hover {
+            background-color: #45a049;
+        }
