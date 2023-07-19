@@ -1,49 +1,53 @@
-const CACHE_NAME = 'app-cache-v1';
-const urlsToCache = [
-  '/',
-  '/index.php',
-  '/style.css',
-  '/script.js',
-  '/болид 1.jpeg',
-  '/результаты1.jpg',
-  '/команда.jpg',
-];
+const staticCacheName = 's-app-v3'
+const dynamicCacheName = 'd-app-v3'
 
-self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then((cache) => {
-        return cache.addAll(urlsToCache);
-      })
-  );
-});
+const assetUrls = [
+  'index.html',
+  '/js/app.js',
+  '/css/styles.css',
+  'offline.html'
+]
 
-// Получение ресурсов из кэша или с сервера
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request)
-      .then((response) => {
-        if (response) {
-          return response; // Возвращаем ресурс из кэша, если он есть
-        }
+self.addEventListener('install', async event => {
+  const cache = await caches.open(staticCacheName)
+  await cache.addAll(assetUrls)
+})
 
-        return fetch(event.request); // Запрашиваем ресурс с сервера
-      })
-  );
-});
+self.addEventListener('activate', async event => {
+  const cacheNames = await caches.keys()
+  await Promise.all(
+    cacheNames
+      .filter(name => name !== staticCacheName)
+      .filter(name => name !== dynamicCacheName)
+      .map(name => caches.delete(name))
+  )
+})
 
-// Удаление устаревших кэшей при активации новой версии Service Worker
-self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    caches.keys()
-      .then((cacheNames) => {
-        return Promise.all(
-          cacheNames.map((cacheName) => {
-            if (cacheName !== CACHE_NAME) {
-              return caches.delete(cacheName);
-            }
-          })
-        );
-      })
-  );
-});
+self.addEventListener('fetch', event => {
+  const {request} = event
+
+  const url = new URL(request.url)
+  if (url.origin === location.origin) {
+    event.respondWith(cacheFirst(request))
+  } else {
+    event.respondWith(networkFirst(request))
+  }
+})
+
+
+async function cacheFirst(request) {
+  const cached = await caches.match(request)
+  return cached ?? await fetch(request)
+}
+
+async function networkFirst(request) {
+  const cache = await caches.open(dynamicCacheName)
+  try {
+    const response = await fetch(request)
+    await cache.put(request, response.clone())
+    return response
+  } catch (e) {
+    const cached = await cache.match(request)
+    return cached ?? await caches.match('/offline.html')
+  }
+}
