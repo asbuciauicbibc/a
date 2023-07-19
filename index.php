@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<?php 
-$connect = new PDO("mysql:host=localhost; dbname = base; charset = utf8", 'root', '');
 
-?>
 <html lang="en">
 <html>
 <head>
@@ -174,19 +171,6 @@ $connect = new PDO("mysql:host=localhost; dbname = base; charset = utf8", 'root'
       <span class="title">Комментарии</span><br>
  
   
-      <? 
-        $comments = $connect->query("SELECT * FROM base.fak");
-        $comments = $comments->fetchALL(PDO::FETCH_ASSOC);
-        foreach($comments as $message ) {
-      ?>
-	  
-  <table>      
-  <tr><th>Имя пользоавтеля:</th><th>Почта:</th><th>Сообщение:</th><th>Дата:</th></tr>
-    <tr><td><?=$message['name']?></td><td><?=$message['email']?></td> <td><?=$message['message']?></td><td>
-      <?=$message['date']?></td></tr>
-  
-      </table>
-    <? } ?>
 
     </div>
   
