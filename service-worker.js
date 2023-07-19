@@ -2,10 +2,13 @@ const staticCacheName = 's-app-v3'
 const dynamicCacheName = 'd-app-v3'
 
 const assetUrls = [
-  'index.html',
-  '/js/app.js',
-  '/css/styles.css',
-  'offline.html'
+  '/',
+  '/index.html',
+  '/styles.css',
+  '/script.js',
+  '/болид 1.jpeg',
+  '/результаты1.jpg',
+  '/команда.jpg',
 ]
 
 self.addEventListener('install', async event => {
