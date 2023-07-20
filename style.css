@@ -237,12 +237,15 @@ section {
 }
 
 .a {
-  font-family: Crimson Pro;
+font-family: Crimson Pro;
   position: absolute;
   top: 1700px;
+  font-size: 2em;
 	background: #ААА;
 	color: gray;
 	align-items: center;
+	width: 70%;
+	height: 500px;
 	background-color: gray;
 }
 .container5 {
